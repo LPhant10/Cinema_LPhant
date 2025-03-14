@@ -1,3 +1,4 @@
+import 'package:cinema_lphant/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
+      theme: AppTheme().getTheme(),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Cinema LP'),

@@ -1,5 +1,8 @@
-import 'package:cinema_lphant/theme/app_theme.dart';
 import 'package:flutter/material.dart';
+
+import 'package:cinema_lphant/router/app_router.dart';
+import 'package:cinema_lphant/theme/app_theme.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -11,18 +14,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       title: 'Material App',
       debugShowCheckedModeBanner: false,
       theme: AppTheme().getTheme(),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Cinema LP'),
-        ),
-        body: const Center(
-          child: Text('Inicio Si!'),
-        ),
-      ),
     );
   }
 }

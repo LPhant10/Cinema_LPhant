@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:cinema_lphant/router/app_router.dart';
-import 'package:cinema_lphant/theme/app_theme.dart';
+import 'package:cinema_lphant/config/router/app_router.dart';
+import 'package:cinema_lphant/config/theme/app_theme.dart';
 
 
 void main() {

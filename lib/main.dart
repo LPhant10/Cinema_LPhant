@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           title: const Text('Cinema LP'),
         ),
         body: const Center(
-          child: Text('Hello World'),
+          child: Text('Hola Luis'),
         ),
       ),
     );

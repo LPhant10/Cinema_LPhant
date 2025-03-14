@@ -2,7 +2,7 @@
    El repositorio me permitira cambiar el data source el origenes
    de datos  */
 
-import 'package:cinema_lphant/config/domain/entities/movie.dart';
+import 'package:cinema_lphant/domain/entities/movie.dart';
 
 abstract class MoviesRepository {
 

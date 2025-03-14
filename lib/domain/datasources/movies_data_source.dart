@@ -5,7 +5,7 @@ Json, de donde sea.
 Definiremos los metodos que estas clases tendran o que puedo llamar para
 traer esa data*/
 
-import 'package:cinema_lphant/config/domain/entities/movie.dart';
+import 'package:cinema_lphant/domain/entities/movie.dart';
 
 abstract class MoviesDataSource {
 

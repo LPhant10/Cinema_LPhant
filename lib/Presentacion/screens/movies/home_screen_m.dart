@@ -1,5 +1,5 @@
+//import 'package:cinema_lphant/config/constants/environment.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class HomeScreenM extends StatelessWidget {
 
@@ -12,9 +12,12 @@ class HomeScreenM extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(title: Text('Hola Luis'),),
-      body: Center(
-        child: Text(dotenv.env['THE_MOVIEDB_KEY'] ?? 'no hay apli key'),
+      body: Placeholder(
+        
       )
+      /* Center(
+        child: Text(Environment.theMovieDBkey),
+      ) */
     );
 }
 }

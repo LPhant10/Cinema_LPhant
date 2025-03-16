@@ -24,7 +24,11 @@ class MoviedbDatasource extends MoviesDataSource{
    final response = await dio.get('/movie/now_playing');
 
    final movieDBResponse = MovieDbResponse.fromJson(response.data);
-   final List<Movie> movies = movieDBResponse.results.map(
+
+
+   final List<Movie> movies = movieDBResponse.results
+   .where((moviedb) => moviedb.posterPath != 'no-posster')
+   .map(
     (moviedb) => MovieMapper.movieDBToEntity(moviedb)
    ).toList();
 

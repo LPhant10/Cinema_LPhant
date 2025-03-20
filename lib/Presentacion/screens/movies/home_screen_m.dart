@@ -46,7 +46,8 @@ class _HomeViewState extends ConsumerState<_HomeView> {
   Widget build(BuildContext context) {
 
 
-    final nowPlayingMovies = ref.watch(nowPlayingMoviesProvider);
+    // final nowPlayingMovies = ref.watch(nowPlayingMoviesProvider);
+    final slideShowMovies = ref.watch(moviesSlideshowProvider);
 
     // if (nowPlayingMovies.length == 0) return CircularProgressIndicator();
 
@@ -56,7 +57,7 @@ class _HomeViewState extends ConsumerState<_HomeView> {
          const CustomAbbbar (),
 
         MoviesSlideshow(
-          movies: nowPlayingMovies)
+          movies: slideShowMovies)
 
 
 

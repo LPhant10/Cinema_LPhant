@@ -1,5 +1,6 @@
 //import 'package:cinema_lphant/config/constants/environment.dart';
 import 'package:cinema_lphant/Presentacion/providers/providers.dart';
+import 'package:cinema_lphant/Presentacion/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -13,7 +14,7 @@ class HomeScreenM extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(title: Text('Hola Luis'),),
+      
       body: _HomeView()
       /* Center(
         child: Text(Environment.theMovieDBkey),
@@ -49,14 +50,25 @@ class _HomeViewState extends ConsumerState<_HomeView> {
 
     // if (nowPlayingMovies.length == 0) return CircularProgressIndicator();
 
-    return ListView.builder(
-      itemCount: nowPlayingMovies.length,
-      itemBuilder: (context, index) {
-        final movie = nowPlayingMovies[index];
-        return ListTile(
-          title: Text(movie.title),
-        );
-      },
+    return Column(
+      children: [
+
+        CustomAbbbar(
+
+        ),
+
+         Expanded(
+           child: ListView.builder(
+            itemCount: nowPlayingMovies.length,
+            itemBuilder: (context, index) {
+             final movie = nowPlayingMovies[index];
+              return ListTile(
+                 title: Text(movie.title),
+                   );
+                 },
+               ),
+         )
+      ],
     );
   }
 }

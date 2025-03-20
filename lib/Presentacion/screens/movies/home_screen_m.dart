@@ -15,7 +15,10 @@ class HomeScreenM extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       
-      body: _HomeView()
+      body: _HomeView(),
+
+      bottomNavigationBar: CustomBottonNavigation(),
+
       /* Center(
         child: Text(Environment.theMovieDBkey),
       ) */

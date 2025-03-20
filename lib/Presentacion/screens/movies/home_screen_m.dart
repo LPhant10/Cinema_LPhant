@@ -53,11 +53,16 @@ class _HomeViewState extends ConsumerState<_HomeView> {
     return Column(
       children: [
 
-        CustomAbbbar(
+         const CustomAbbbar (),
 
-        ),
+        MoviesSlideshow(
+          movies: nowPlayingMovies)
 
-         Expanded(
+
+
+
+
+        /*  Expanded(
            child: ListView.builder(
             itemCount: nowPlayingMovies.length,
             itemBuilder: (context, index) {
@@ -67,7 +72,7 @@ class _HomeViewState extends ConsumerState<_HomeView> {
                    );
                  },
                ),
-         )
+         ) */
       ],
     );
   }

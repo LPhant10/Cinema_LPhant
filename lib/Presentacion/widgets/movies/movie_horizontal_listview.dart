@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:cinema_lphant/config/helpers/human_formats.dart';
 import 'package:cinema_lphant/domain/entities/movie.dart';
 import 'package:flutter/material.dart';
 
@@ -101,15 +102,24 @@ class _Slide extends StatelessWidget {
 
           //*Rating
 
-          Row(
-            children: [
-              Icon(Icons.star_half_outlined, color: Colors.yellow.shade800,),
-              const SizedBox(width: 3,),
-              Text('${movie.voteAverage}',style: textStyles.bodyMedium?.copyWith(color: Colors.yellow.shade800)),
-              const SizedBox(width: 10),
-              Text('${movie.popularity}',style: textStyles.bodySmall)
-
-            ],
+          SizedBox(
+            width: 150,
+            child: Row(
+              children: [
+                Icon(Icons.star_half_outlined, color: Colors.yellow.shade800,),
+                const SizedBox(width: 3,),
+                Text('${movie.voteAverage}',style: textStyles.bodyMedium?.copyWith(color: Colors.yellow.shade800)),
+                //const SizedBox(width: 10),
+                const Spacer(),
+                //TODO : Este es el orginal Text(HumanFormats.number(movie.popularity), style: textStyles.bodySmall),
+            
+                Text(HumanFormats.number(4280.0), style: textStyles.bodySmall),
+            
+                //Text('${movie.popularity}',style: textStyles.bodySmall)
+                
+            
+              ],
+            ),
           )
           
         ]),

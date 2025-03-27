@@ -10,6 +10,7 @@ import 'package:cinema_lphant/domain/entities/movie.dart';
 abstract class MoviesDataSource {
 
   Future<List<Movie>> getNowPlating({int page = 1});
+  Future<List<Movie>> getPopular({int page = 1});
 
 
 }

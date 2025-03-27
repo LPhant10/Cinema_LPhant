@@ -1,5 +1,4 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:cinema_lphant/config/helpers/human_formats.dart';
 import 'package:cinema_lphant/domain/entities/movie.dart';
 import 'package:flutter/material.dart';
 
@@ -147,7 +146,7 @@ class _Slide extends StatelessWidget {
                 //const SizedBox(width: 10),
                 const SizedBox(width:  5),
                 // const Spacer(),
-                //TODO : Este es el orginal Text(HumanFormats.number(movie.popularity), style: textStyles.bodySmall),
+                // Este es el orginal Text(HumanFormats.number(movie.popularity), style: textStyles.bodySmall),
             
                 // Text(HumanFormats.number(4280.0), style: textStyles.bodySmall),
                 //Text(HumanFormats.number(movie.popularity), style: textStyles.bodySmall)

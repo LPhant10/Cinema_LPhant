@@ -54,41 +54,84 @@ class _HomeViewState extends ConsumerState<_HomeView> {
 
     // if (nowPlayingMovies.length == 0) return CircularProgressIndicator();
 
-    return Column(
-      children: [
+    return CustomScrollView(
 
-         const CustomAbbbar (),
+      slivers: [
 
-        MoviesSlideshow(
-          movies: slideShowMovies),
+        const SliverAppBar(
+          floating: true,
+          flexibleSpace: FlexibleSpaceBar(
+            title: CustomAbbbar(),
+          ),
+        ),
 
-          MovieHorizontalListview(
-            movies: nowPlayingMovies,
-            title: 'En Cines',
-            subTitle: 'Sabado 22',
-            loadNextPage: () {
-              ref.read(nowPlayingMoviesProvider.notifier).loadNextPage();
-            },
+        SliverList(delegate: SliverChildBuilderDelegate(
+          (context, index) {
+            return Column(
+        children: [
+      
+           // const CustomAbbbar (),
+      
+          MoviesSlideshow(
+            movies: slideShowMovies),
+      
+            MovieHorizontalListview(
+              movies: nowPlayingMovies,
+              title: 'En Cines',
+              subTitle: 'Sabado 22',
+              loadNextPage: () {
+                ref.read(nowPlayingMoviesProvider.notifier).loadNextPage();
+              },
+              ),
+      
+              MovieHorizontalListview(
+              movies: nowPlayingMovies,
+              title: 'Proximamente',
+              subTitle: 'En este mes ',
+              loadNextPage: () {
+                ref.read(nowPlayingMoviesProvider.notifier).loadNextPage();
+              },
+              ),
+      
+              MovieHorizontalListview(
+              movies: nowPlayingMovies,
+              title: 'Populares',
+              //subTitle: 'En este mes ',
+              loadNextPage: () {
+                ref.read(nowPlayingMoviesProvider.notifier).loadNextPage();
+              },
+              ),
+      
+              MovieHorizontalListview(
+              movies: nowPlayingMovies,
+              title: 'Mejor Calificadas',
+              subTitle: 'Desde siempre',
+              loadNextPage: () {
+                ref.read(nowPlayingMoviesProvider.notifier).loadNextPage();
+              },
+              ),
 
-            ),
-            
+              SizedBox(height: 10,)
+
+          /*  Expanded(
+             child: ListView.builder(
+              itemCount: nowPlayingMovies.length,
+              itemBuilder: (context, index) {
+               final movie = nowPlayingMovies[index];
+                return ListTile(
+                   title: Text(movie.title),
+                     );
+                   },
+                 ),
+           ) */
+        ],
+      );
+          },
+          childCount: 1
+          ))
 
 
-
-
-
-        /*  Expanded(
-           child: ListView.builder(
-            itemCount: nowPlayingMovies.length,
-            itemBuilder: (context, index) {
-             final movie = nowPlayingMovies[index];
-              return ListTile(
-                 title: Text(movie.title),
-                   );
-                 },
-               ),
-         ) */
-      ],
+      ]
     );
   }
 }

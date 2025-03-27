@@ -60,6 +60,7 @@ class _HomeViewState extends ConsumerState<_HomeView> {
     final topRateMovies = ref.watch(topRateMoviesProvider);
 
     // if (nowPlayingMovies.length == 0) return CircularProgressIndicator();
+    return const FullScreenLoader();
 
     return CustomScrollView(
 
